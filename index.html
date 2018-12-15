@@ -1,0 +1,272 @@
+<!Doctype html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Course assignment</title>
+    
+    </head>
+    
+    <style>
+  .dice {
+  position: absolute;
+  border-radius: 5px;
+  border: 3px solid #75CD65;
+  width:52px;
+  height: 42px;
+  padding:10px 10px 20px 10px;
+  font-size:44px;
+  background:#F5F5F5;
+  top: 170px;
+  left: 140px;
+  text-align:center;
+  }
+
+.dieButton {
+  position: absolute;
+  border-radius: 5px;
+  width:120px;
+  height: 50px;
+  padding:1px;
+  font-size:20px;
+  background-color:chartreuse;
+  top: 100px;
+  left: 127px;
+  border: 2px solid blue;
+  text-align:center;
+} 
+
+ .bottom-row {
+  position:absolute;
+  height: 210px;
+  border-bottom-left-radius: 15px;
+  border-bottom-right-radius: 15px;
+  left: 50%;
+}
+.player {
+  position: absolute;
+  height: 40px;
+  width: 40px;
+   border: 1px solid;
+}   
+        
+  </style>
+  
+    
+    
+    
+    <body>
+      
+     <div class ='container'>
+      <div class='bottom-row right-section'>
+      <button class="dieButton" onclick="rollDice()">Roll Dice</button>
+      
+     <div id="die1" class="dice">0</div>
+      </div>
+       <canvas id="canvas" width="500" height="600"></canvas>
+        <div id=board></div>
+      </div>
+  
+    
+    <script>
+ 
+             
+        
+       
+// create a canavs
+ var canvas = document.getElementById("canvas");
+var context = canvas.getContext("2d"); 
+  
+        
+// Size of tile, columns and rows
+var resolution = 100;      
+var cols = 5;
+var rows = 6; 
+ 
+ // define x and y position   
+var x = 0;
+var y = (rows - 1) * resolution;
+var dir = 1;
+var columnNr = 1
+var position = 0
+ var status = 1       
+// define color
+var colorA = "blue";
+var colorB = "white"
+        
+// create player  array 
+const players = [{ name:"Cloud", position: 1, color: "gold"},
+                 {name:"Sephiroth",position: 1, color: "white"}];
+                
+ var  ladders = [{ start: 3, end: 13},
+                 {start: 18,end: 28},
+                 {start: 9,end: 19}];
+
+  var  snakes = [{ start: 15, end: 5},
+                 {start: 27,end: 12}];
+ 
+        
+// set player position 
+        
+var currentPlayerTurn= 0;     
+ 
+        
+ // roll dice
+
+function rollDice(){
+    var die1 = document.getElementById("die1");
+    var randomDiceResult = Math.floor(Math.random() * 6) + 1;
+    die1.innerHTML = randomDiceResult;
+   console.log("You rolled", randomDiceResult);
+
+    
+    var currentPlayer = players[currentPlayerTurn];
+  currentPlayer.position += randomDiceResult;
+  
+  
+    if (currentPlayer.position >=30) {
+      alert("player won")
+    context.fillRect(0,0,canvas.width,canvas.height/2);
+                context.fillStyle="black";
+                context.font= "40px Verdana";
+                context.textAlign="center";
+                context.strokeStyle="#52ce90";
+                context.strokeText("Game Over", x, 120);
+                context.fill();
+
+  }
+ 
+    
+  
+  currentPlayerTurn ++;
+  if (currentPlayerTurn >= players.length) {
+    currentPlayerTurn = 0;
+  }
+   
+  
+       drawPlayer() 
+   }  
+           
+     
+               
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+
+           
+// create Tiles  array      
+var tiles=[];
+        for(c=0;c<cols;c++){
+         var row = [];
+        tiles.push(row);
+        for(r=0;r<rows;r++){ 
+        row.push({x,y,position, status:1});
+         position++
+            
+      } 
+     
+    }
+
+function drawTiles(){
+    for(c=0;c<cols;c++){
+        for(r=0;r<rows;r++){ 
+        var tile =  tiles[c][r]
+            tile.r = x
+            tile.c = y 
+            
+            if (columnNr % 2 == 0) 
+                    {
+                        context.fillStyle = colorA;
+                    }
+                    else 
+                    {
+                        context.fillStyle = colorB;
+                    }
+     
+        context.fillRect(x,y, resolution, resolution)
+           
+           
+           context.font = "18px tahoma";
+           context.textBaseline="4";
+           context.fillStyle = "black"
+           context.fillText(columnNr, x,y+resolution) 
+            columnNr++
+           
+            
+            
+             x = x + (resolution * dir);
+    // Move along a winding path up the rows
+    if (x >= canvas.width || x <= -resolution) {
+      dir *= -1;
+      x += resolution * dir;
+      y -= resolution;
+    
+    } 
+}    
+            
+      } 
+     
+    }
+      
+drawTiles()
+  
+
+
+ 
+    function drawPlayer(){
+        players.forEach(player=>{
+            var square = null
+            
+    tiles.forEach(row=>{
+    
+    row.forEach(square=>{
+       
+             if (square.position === player.position){
+               console.log( players.position)
+             console.log("player position is"+ square.position)
+             context.beginPath();
+             context.arc(square.r+50,square.c+50,30, 0, Math.PI*2);
+             context.fillStyle = (player.color);
+             context.fill();
+             context.closePath();
+             context.stroke();
+             }
+            
+        
+             
+          
+                
+      });
+    });
+  });
+  
+         }
+
+drawPlayer()
+
+
+
+   
+ 
+   
+   
+
+        
+        
+        </script>
+    
+    
+    </body>
+</html>
+        

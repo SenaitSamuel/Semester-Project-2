@@ -1,0 +1,152 @@
+/* Variables */
+/* mixin */
+/* BlockTags */
+body {
+  font: "https://fonts.googleapis.com/css?family=Open+Sans:400,800";
+  background: #2a3f70;
+}
+
+h1 {
+  font-size: 2.25rem;
+}
+
+p {
+  font-size: 1.375rem;
+}
+
+a {
+  color: #FFFFFF;
+}
+
+a:hover {
+  color: #000000;
+}
+
+/* nav */
+.navbar {
+  min-height: 100px;
+  padding-top: 20px;
+  margin: 0;
+}
+.navbar .brandLogo {
+  margin-top: -30px;
+  max-width: 40%;
+}
+.navbar .navbar-nav li a {
+  color: #FFFFFF;
+  font-size: 1.75rem;
+}
+.navbar .navbar-nav li a:hover, .navbar .navbar-nav li a:focus {
+  color: #000000;
+}
+.navbar .navbar-nav li .homeIcon {
+  width: 60px;
+  padding-top: 0px;
+}
+.navbar .navbar-toggle {
+  border-color: #FFFFFF;
+}
+.navbar .navbar-toggle:focus {
+  color: #FFFFFF;
+}
+.navbar .navbar-toggle .icon-bar {
+  background: #FFFFFF;
+}
+
+.img-wrapper {
+  position: relative;
+}
+.img-wrapper .img-overlay {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  text-align: center;
+}
+.img-wrapper .img-overlay:before {
+  content: " ";
+  display: block;
+  height: 60%;
+}
+
+/* slide */
+.img-responsive {
+  width: 100%;
+  height: auto;
+}
+
+/* charcter cards */
+.card {
+  height: auto;
+  background-color: #ffffff;
+  filter: drop-shadow(8px 8px 10px gray);
+  margin-top: 20px;
+  margin-bottom: 20px;
+  padding-bottom: 10px;
+}
+.card h3 {
+  font-size: 18px;
+  padding-bottom: 10px;
+  text-align: center;
+}
+.card button {
+  border: 3px solid #66c917;
+  font-size: 18px;
+  background: #66c917;
+  color: #FFFFFF;
+  margin-bottom: 20px;
+  box-shadow: 0 9px #999;
+  width: 150px;
+}
+.card button .btnOff {
+  border: 3px solid #66c917;
+  font-size: 20px;
+  background: #66c917;
+  color: #FFFFFF;
+  margin-bottom: 20px;
+}
+.card button .btnOn {
+  border: 3px solid #66c917;
+  font-size: 16px;
+  background: #66c917;
+  color: "red";
+  margin-bottom: 20px;
+}
+
+/* Footer */
+.footer-main {
+  background-image: url(concrete_wall.png);
+  background-repeat: repeat;
+  min-height: 80px;
+}
+
+.footer-copyright {
+  padding-top: 30px;
+  color: #FFFFFF;
+}
+
+/* for small devices */
+@media (max-width: 768px) {
+  .brandLogo {
+    margin-top: 30px;
+    max-width: 20%;
+  }
+
+  .card {
+    padding-bottom: 20px;
+  }
+}
+@media (max-width: 480px) {
+  .brandLogo {
+    margin-top: 60px;
+    max-width: 30%;
+  }
+}
+@media (max-width: 320px) {
+  .brandLogo {
+    max-width: 20%;
+  }
+}
+
+/*# sourceMappingURL=style.css.map */
