@@ -1,0 +1,105 @@
+/* nav */
+.navbar {
+    min-height: 100px;
+    padding-top: 20px;
+    margin: 0;
+  
+    
+    .navbar-brand  {
+        margin-top: -50px;
+    
+     }
+    
+    .navbar-nav li {
+        a{
+        color: $white;
+       
+        @include font-size(28px);    
+        
+        &:hover,
+        &:focus{
+            color: $black;
+            
+            }
+        }
+       .homeIcon{
+       width:  60px;
+        padding-top: 0px;
+    }
+    
+   
+
+}
+    .navbar-toggle{
+    border-color: $white;
+    &:focus{
+    color: $white;
+    }
+        .icon-bar {
+    background:$white;
+    }
+   
+    }
+ }
+
+/* Footer */
+.footer-main{
+    background-image: url(concrete_wall.png);
+    background-repeat: repeat;
+    min-height: 80px;
+    
+}
+
+.footer-copyright {
+  padding-top: 30px;
+  color: #FFFFFF;
+}
+
+
+/* for small devices */
+@media(max-width:920px){
+    
+    .navbar-brand  {
+        margin-top: -20px;
+    
+     }
+    
+} 
+@media(max-width:768px){
+    
+    .navbar-brand  {
+        margin-top: 10px;
+    
+     }
+     
+   .card{
+      padding-bottom: 20px;
+    }  
+}
+
+@media(max-width : 480px){
+   .navbar-brand  {
+        margin-top: -5px;
+        max-width: 80%;
+     }
+     
+}
+
+
+ @media(max-width : 320px){
+    
+   .navbar-brand  {
+        margin-top: 10px;
+       max-width: 80%;
+    
+     }
+     .img-overlay{
+         .playButton {
+             max-height: 40%;
+             
+         }   
+     }
+    
+}
+
+

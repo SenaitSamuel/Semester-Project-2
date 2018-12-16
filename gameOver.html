@@ -1,0 +1,78 @@
+<!Doctype html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Design 2 Module assignment</title>
+        <link rel="stylesheet" href="style.css">
+    </head>
+  <body>
+    <div> 
+        <canvas id="canvas" width="500" height="600"></canvas>
+        
+      </div>
+     
+
+<script>
+     
+ // create a canavs
+ var canvas = document.getElementById("canvas");
+var context = canvas.getContext("2d"); 
+         img = new Image,
+        img.src = "gameOverCover.svg"
+       var x = 0; var y = 200; 
+   function draw(){
+       
+           canvas.width = 900
+                context.fillRect(0,0,canvas.width,canvas.height);
+                context.fillStyle="black";
+                context.font= "100px Verdana";
+                context.textAlign="center";
+                context.strokeStyle="#52ce90";
+                context.strokeText("Game Over", x, y);
+                context.fill();
+                context.drawImage(img, x, 100);
+               if (x== canvas.width/3){
+                  clearInterval(moveText);
+               } else {
+                   x++;  
+               }
+     
+            }
+            
+            var moveText = setInterval( draw, 20)
+             
+            
+         
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+     
+
+
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      </script>
+    </body>
+    
+</html>
