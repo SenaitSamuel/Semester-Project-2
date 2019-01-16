@@ -1,0 +1,20 @@
+/* BlockTags */
+body{
+     font: $font;
+     background: $background;
+}
+h1{
+    @include font-size(90px);
+    
+}
+h3{
+    @include font-size(18px);
+}
+
+a{
+    color: $white;
+}
+
+ a:hover{
+    color: $black;
+}

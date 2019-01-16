@@ -1,0 +1,86 @@
+
+
+/* wrapper */
+
+.img-wrapper {
+  position: relative;
+    
+    .img-overlay {
+  position: absolute;
+  top:10px;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  text-align: center;
+ 
+     h1{
+    font-size: @include font-size(50px);
+    font-family: $font1;  
+    font-weight: bold;
+    background-color: black
+   margin-top: -10px
+ } 
+}
+
+
+
+ }
+
+
+
+/* Images */
+
+  .img-responsive{
+    width: 100%;  
+    height: auto;
+
+}  
+
+
+/* charcter cards */
+
+.card{
+    height: 80px;
+    background-color:  #ffffff;
+    filter: drop-shadow(8px 8px 10px gray);
+    margin-top: 20px;
+    margin-bottom: 20px;
+    padding-bottom: 10px;
+    
+    h3{
+    font-size: @include font-size(18px);
+    font-family: $font2;
+    padding-bottom: 10px;
+    text-align: center;
+}
+button{
+      border: 3px solid  $button ;
+    font-size: 18px;
+    background: $button ;
+     color: $white;
+     margin-bottom: 20px;
+    box-shadow: 0 9px #999;
+    width: 150px;
+         
+         
+    .btnOff{
+     border: 3px solid  $green;
+    font-size: 20px;
+    background: $green;
+     color: $white;
+     margin-bottom: 20px; 
+    }
+   .btnOn{
+    border: 3px solid  $green;
+    font-size: 16px;
+    background:$button ;
+     color: $red;
+     margin-bottom: 20px  
+} 
+    
+    
+   }
+ 
+ }
+
+
